@@ -17,5 +17,6 @@
     "url": "https://github.com/sawara7/my-utils/issues"
   },
   "homepage": "https://github.com/sawara7/my-utils#readme",
+  "bundleDependencies": false,
   "dependencies": {}
 }
