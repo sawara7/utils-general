@@ -1,5 +1,5 @@
 {
-  "name": "mongodb-utils",
+  "name": "my-utils",
   "version": "0.0.1",
   "description": "my utils",
   "main": "dist/index.js",
