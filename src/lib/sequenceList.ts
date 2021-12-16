@@ -9,7 +9,7 @@ export class SequenceList {
     private list: SequenceListType[][] = []
     constructor(
         private intervalSec: number,
-        private sequenceNum: number) {
+        sequenceNum: number) {
         for (let i=0; i<sequenceNum; i++) {
             this.list.push([])
         }

@@ -4,7 +4,6 @@ const time_1 = require("./time");
 class SequenceList {
     constructor(intervalSec, sequenceNum) {
         this.intervalSec = intervalSec;
-        this.sequenceNum = sequenceNum;
         this.list = [];
         for (let i = 0; i < sequenceNum; i++) {
             this.list.push([]);

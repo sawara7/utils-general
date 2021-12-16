@@ -4,7 +4,6 @@ export interface SequenceListType {
 }
 export declare class SequenceList {
     private intervalSec;
-    private sequenceNum;
     private list;
     constructor(intervalSec: number, sequenceNum: number);
     push(value: SequenceListType): void;
