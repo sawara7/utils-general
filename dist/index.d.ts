@@ -4,3 +4,4 @@ export * from './lib/time';
 export * from './lib/sequenceList';
 export * from './lib/firebase';
 export * from './lib/tradeDefinition';
+export * from './lib/restAPI';

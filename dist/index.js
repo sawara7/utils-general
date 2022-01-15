@@ -16,3 +16,4 @@ __exportStar(require("./lib/time"), exports);
 __exportStar(require("./lib/sequenceList"), exports);
 __exportStar(require("./lib/firebase"), exports);
 __exportStar(require("./lib/tradeDefinition"), exports);
+__exportStar(require("./lib/restAPI"), exports);
