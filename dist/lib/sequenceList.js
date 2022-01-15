@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SequenceList = void 0;
 const time_1 = require("./time");
 class SequenceList {
     constructor(intervalSec, sequenceNum) {
@@ -17,7 +18,7 @@ class SequenceList {
         for (let i = 0; i < this.list.length; i++) {
             let tmpMarketList = [];
             for (const m of this.list[i]) {
-                if (m.timestamp >= time_1.timeBeforeSec(this.intervalSec * (i + 1))) {
+                if (m.timestamp >= (0, time_1.timeBeforeSec)(this.intervalSec * (i + 1))) {
                     tmpMarketList.push(m);
                 }
                 else if (i < this.list.length - 1) {
