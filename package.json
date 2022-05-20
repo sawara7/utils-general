@@ -21,9 +21,5 @@
   "devDependencies": {
     "@types/node": "^14.17.9",
     "typescript": "^4.3.5"
-  },
-  "dependencies": {
-    "mongodb-utils": "github:sawara7/mongodb-utils",
-    "firebase-utils-server": "github:sawara7/firebase-utils-server"
   }
 }
