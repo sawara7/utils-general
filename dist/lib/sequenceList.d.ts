@@ -3,8 +3,9 @@ export interface SequenceListType {
     timestamp: number;
 }
 export declare class SequenceList {
-    private intervalSec;
-    private list;
+    private _list;
+    private _intervalSec;
+    private _sequenceNum;
     constructor(intervalSec: number, sequenceNum: number);
     push(value: SequenceListType): void;
     update(): void;

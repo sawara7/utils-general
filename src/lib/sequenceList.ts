@@ -6,39 +6,41 @@ export interface SequenceListType {
 }
 
 export class SequenceList {
-    private list: SequenceListType[][] = []
-    constructor(
-        private intervalSec: number,
-        sequenceNum: number) {
+    private _list: SequenceListType[][] = []
+    private _intervalSec: number = 0
+    private _sequenceNum: number = 0
+    constructor( intervalSec: number, sequenceNum: number ) {
+        this._intervalSec = intervalSec
+        this._sequenceNum = sequenceNum
         for (let i=0; i<sequenceNum; i++) {
-            this.list.push([])
+            this._list.push([])
         }
     }
 
     public push(value: SequenceListType) {
-        this.list[0].push(value)
+        this._list[0].push(value)
         this.update()
     }
 
     public update() {
-        for (let i=0; i< this.list.length; i++) {
+        for (let i=0; i< this._list.length; i++) {
             let tmpMarketList: SequenceListType[] = []
-            for (const m of this.list[i]) {
-                if (m.timestamp >= timeBeforeSec(this.intervalSec * (i+1))) {
+            for (const m of this._list[i]) {
+                if (m.timestamp >= timeBeforeSec(this._intervalSec * (i+1))) {
                     tmpMarketList.push(m)
-                }else if (i < this.list.length-1) {
-                    this.list[i+1].push(m)
+                }else if (i < this._list.length-1) {
+                    this._list[i+1].push(m)
                 }
             }
-            this.list[i] = tmpMarketList
+            this._list[i] = tmpMarketList
         }
     }
 
     public getHigh(key: string): number[] {
         const result = []
-        for (let i=0; i< this.list.length; i++) {
+        for (let i=0; i< this._list.length; i++) {
             result.push(-Infinity)
-            for (const m of this.list[i]) {
+            for (const m of this._list[i]) {
                 if (m[key]) {
                     result[i] = result[i] < m[key]? m[key]: result[i]
                 }
@@ -49,9 +51,9 @@ export class SequenceList {
 
     public getLow(key: string): number[] {
         const result = []
-        for (let i=0; i< this.list.length; i++) {
+        for (let i=0; i< this._list.length; i++) {
             result.push(Infinity)
-            for (const m of this.list[i]) {
+            for (const m of this._list[i]) {
                 if (m[key]) {
                     result[i] = result[i] > m[key]? m[key]: result[i]
                 }
@@ -62,9 +64,9 @@ export class SequenceList {
 
     public getSum(key: string): number[] {
         const result = []
-        for (let i=0; i< this.list.length; i++) {
+        for (let i=0; i< this._list.length; i++) {
             result.push(0)
-            for (const m of this.list[i]) {
+            for (const m of this._list[i]) {
                 if (m[key]) {
                     result[i] += m[key]
                 }
@@ -75,8 +77,8 @@ export class SequenceList {
 
     public lastValue(key: string): number | null {
         let result = null
-        if (this.list[0].length > 0) {
-            const v = this.list[0][this.list[0].length - 1][key]
+        if (this._list[0].length > 0) {
+            const v = this._list[0][this._list[0].length - 1][key]
             result = v? v: null;
         }
         return null
