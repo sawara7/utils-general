@@ -20,4 +20,4 @@ __exportStar(require("./lib/time"), exports);
 __exportStar(require("./lib/sequenceList"), exports);
 __exportStar(require("./lib/restAPI"), exports);
 __exportStar(require("./lib/os"), exports);
-__exportStar(require("./lib/uuid"), exports);
+__exportStar(require("./lib/base"), exports);
