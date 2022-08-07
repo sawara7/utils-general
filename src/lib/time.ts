@@ -6,7 +6,6 @@ export function timeBeforeMin(min: number): number {
     return Date.now() - min * 1000 * 60
 }
 
-
 export type TimeSpan = 'year' | 'month' | 'day' | 'hour' | 'minute'
 
 function setZero(type: TimeSpan, date: Date): void {
