@@ -1,5 +1,6 @@
 export function floor(value: number, precision: number): number {
-    return Math.floor(value * precision)/precision
+    const d = Math.pow(10, precision)
+    return Math.floor(value * d)/d
 }
 
 export function exponential(base:number, e: number): number {
