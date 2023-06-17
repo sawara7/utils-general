@@ -21,3 +21,4 @@ __exportStar(require("./lib/sequenceList"), exports);
 __exportStar(require("./lib/restAPI"), exports);
 __exportStar(require("./lib/os"), exports);
 __exportStar(require("./lib/base"), exports);
+__exportStar(require("./lib/json"), exports);
