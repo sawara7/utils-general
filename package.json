@@ -3,11 +3,13 @@
   "version": "0.0.2",
   "main": "dist/index.js",
   "scripts": {
-    "install-rimraf": "npm install --save-dev rimraf",
-    "cleanup": "rimraf package-lock.json && rimraf dist && rimraf node_modules",
-    "build": "npm run install-rimraf && npm run cleanup && npm install && tsc && npm test",
-    "test": "jest",
-    "tsc": "tsc"
+    "rmDist": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})'",
+    "rmNodeModules": "node -e 'fs.rmSync(`node_modules`, {recursive:true, force:true})'",
+    "rmPackageLock": "node -e 'fs.rmSync(`package-lock.json`, {recursive:true, force:true})'",
+    "cleanup": "npm run rmDist && npm run rmNodeModules && npm run rmPackageLock",
+    "build": "npm run cleanup && npm install && tsc",
+    "tsc": "tsc",
+    "test": "jest"
   },
   "jest": {
     "globals": {
@@ -24,12 +26,10 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.5",
-    "@types/node": "^20.8.3",
+    "@types/node": "^20.14.11",
     "@types/uuid": "^9.0.5",
-    "jest": "^29.7.0",
-    "rimraf": "^5.0.5",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.2.2"
+    "typescript": "^5.5.3",
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0"
   }
 }

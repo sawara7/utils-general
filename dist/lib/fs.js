@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getHDDRate = void 0;
+exports.getHDDRate = getHDDRate;
 const fs_1 = require("fs");
 function getHDDRate() {
     return __awaiter(this, void 0, void 0, function* () {
@@ -17,7 +17,6 @@ function getHDDRate() {
         console.log(res);
     });
 }
-exports.getHDDRate = getHDDRate;
 (() => __awaiter(void 0, void 0, void 0, function* () {
     yield getHDDRate();
 }))();

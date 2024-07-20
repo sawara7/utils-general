@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getTimeStampKey = exports.timeBeforeMin = exports.timeBeforeSec = void 0;
+exports.timeBeforeSec = timeBeforeSec;
+exports.timeBeforeMin = timeBeforeMin;
+exports.getTimeStampKey = getTimeStampKey;
 function timeBeforeSec(sec) {
     return Date.now() - sec * 1000;
 }
-exports.timeBeforeSec = timeBeforeSec;
 function timeBeforeMin(min) {
     return Date.now() - min * 1000 * 60;
 }
-exports.timeBeforeMin = timeBeforeMin;
 function setZero(type, date) {
     if (['year'].includes(type))
         date.setMonth(0);
@@ -41,4 +41,3 @@ function getTimeStampKey(time, type, ago) {
     setZero(type, d);
     return d.getTime();
 }
-exports.getTimeStampKey = getTimeStampKey;

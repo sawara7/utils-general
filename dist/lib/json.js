@@ -23,9 +23,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getJSON = void 0;
+exports.getJSON = getJSON;
 const fs = __importStar(require("fs"));
 function getJSON(path) {
     return JSON.parse(fs.readFileSync(path, 'utf8'));
 }
-exports.getJSON = getJSON;
