@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "ncu && npm install && npm update && tsc",
-    "commit": "git commit -am 'commit' && npm version patch",
+    "commit": "git commit -am 'commit' && npm version patch && git push",
     "test": "jest"
   },
   "jest": {
